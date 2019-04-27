@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="home">home</div>
+    <div>HelloWorld</div>
   </div>
 </template>
 <script>
@@ -9,7 +9,4 @@ export default {
 };
 </script>
 <style scoped>
-.home {
-  font-size: 50px;
-}
 </style>
