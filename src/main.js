@@ -6,7 +6,8 @@ import router from './router'
 // 初始化页面样式
 import './assets/styles/reset.css'
 // 解决移动端1px问题
-import './assets/styles/border.css'
+import 'styles/border.css'
+import 'styles/iconfont.css'
 //解决部分机型点击300ms延迟
 import fastClick from 'fastclick'
 
