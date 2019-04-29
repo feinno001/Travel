@@ -37,7 +37,8 @@ export default {
 };
 </script>
 <style lang='stylus' scoped>
-#穿透样式scoped限制, .wrapper >>> .swiper-pagination-bullet-active {
+#穿透样式scoped限制, 
+.wrapper >>> .swiper-pagination-bullet-active {
   background: #fff;
 }
 
