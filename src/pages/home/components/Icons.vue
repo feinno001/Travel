@@ -1,7 +1,7 @@
 <!--  -->
 <template>
   <div class="icons">
-    <swiper>
+    <swiper :options="swiperOption">
       <swiper-slide v-for="(page,index) of pages" :key="index">
         <div class="icon" v-for="item of page" :key="item.id">
           <div class="icon-img">
@@ -19,6 +19,7 @@ export default {
   name: "HomeIcons",
   data() {
     return {
+      swiperOption: {},
       iconList: [
         {
           id: "001",
@@ -82,7 +83,6 @@ export default {
       const pages = [];
       this.iconList.forEach((item, index) => {
         const page = Math.floor(index / 8);
-        console.log(pages[page]);
         if (!pages[page]) {
           pages[page] = [];
         }
