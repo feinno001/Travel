@@ -26,22 +26,22 @@ export default {
           id: "001",
           imgUrl:
             "http://img1.qunarzz.com/sight/source/1505/24/4b609109dba139.jpg_r_640x214_b28f6052.jpg",
-          title: "宿迁三台山森林公园",
-          desc: "这里最近很火哦，好多人都在点评它呢！"
+          title: "无锡打卡",
+          desc: "到无锡，一水，一山，一佛！"
         },
         {
           id: "002",
           imgUrl:
             "http://img1.qunarzz.com/sight/source/1811/58/a02ad3ab47e3e3.jpg_r_640x214_08977098.jpg",
-          title: "宿迁三台山森林公园",
-          desc: "这里最近很火哦，好多人都在点评它呢！"
+          title: "扬州大明寺",
+          desc: "大明寺扬州第一名胜，集佛教庙宇、文物古迹和园林风光于一体的游览胜地"
         },
         {
           id: "003",
           imgUrl:
             "http://img1.qunarzz.com/sight/source/1505/f1/ae9d4299b8aaea.jpg_r_640x214_0c555905.jpg",
-          title: "宿迁三台山森林公园",
-          desc: "这里最近很火哦，好多人都在点评它呢！"
+          title: "南京必打卡",
+          desc: "看尽王侯将相荣辱成败，六朝金粉潮起潮落"
         }
       ]
     };
