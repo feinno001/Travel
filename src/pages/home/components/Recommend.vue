@@ -3,11 +3,8 @@
   <div>
     <div class="title">热销推荐</div>
     <ul>
-      <li class="item border-bottom" v-for='item of recommendList' :key='item.id'>
-        <img
-          class="item-img"
-          :src="item.imgUrl"
-        >
+      <li class="item border-bottom" v-for="item of recommendList" :key="item.id">
+        <img class="item-img" :src="item.imgUrl">
         <div class="item-info">
           <p class="item-title">{{item.title}}</p>
           <p class="item-desc">{{item.desc}}</p>
@@ -21,31 +18,17 @@
 <script>
 export default {
   name: "HomeRecommend",
+  props: {
+    recommendList: Array
+  },
   data() {
-    return {
-      recommendList:[{
-        id:'001',
-        imgUrl:"https://imgs.qunarzz.com/sight/p0/1509/e8/e852a1e716eb509.water.jpg_110x110_b3c141ae.jpg",
-        title:'宿迁三台山森林公园',
-        desc:'这里最近很火哦，好多人都在点评它呢！'
-      },{
-        id:'002',
-        imgUrl:"https://imgs.qunarzz.com/sight/p0/1509/e8/e852a1e716eb509.water.jpg_110x110_b3c141ae.jpg",
-        title:'宿迁三台山森林公园',
-        desc:'这里最近很火哦，好多人都在点评它呢！'
-      },
-      {
-        id:'003',
-        imgUrl:"https://imgs.qunarzz.com/sight/p0/1509/e8/e852a1e716eb509.water.jpg_110x110_b3c141ae.jpg",
-        title:'宿迁三台山森林公园',
-        desc:'这里最近很火哦，好多人都在点评它呢！'
-      }]
-    };
+    return {};
   }
 };
 </script>
 <style lang='stylus' scoped>
 @import '~styles/mixins.styl';
+
 .title {
   margin-top: 0.2rem;
   line-height: 0.8rem;

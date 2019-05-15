@@ -14,6 +14,9 @@
 <script>
 export default {
   name: "HomeSwiper",
+  props: {
+    swiperList: Array
+  },
   data() {
     return {
       swiperOption: {
@@ -21,24 +24,13 @@ export default {
         pagination: ".swiper-pagination",
         loop: true,
         autoplay: 3000
-      },
-      swiperList: [
-        {
-          id: "001",
-          imgUrl: "https://img1.qunarzz.com/qs/1903/ef/f0ec348a8a7c5b02.jpg"
-        },
-        {
-          id: "002",
-          imgUrl: "https://img1.qunarzz.com/qs/1903/5d/9976906642666a02.jpg"
-        }
-      ]
+      }
     };
   }
 };
 </script>
 <style lang='stylus' scoped>
-#穿透样式scoped限制, 
-.wrapper >>> .swiper-pagination-bullet-active {
+#穿透样式scoped限制, .wrapper >>> .swiper-pagination-bullet-active {
   background: #fff;
 }
 
@@ -46,7 +38,7 @@ export default {
   overflow: hidden;
   width: 100%;
   height: 0;
-  padding-bottom: 54%;
+  padding-bottom: 31%;
 
   .swiper-img {
     width: 100%;
