@@ -23,8 +23,14 @@ export default {
   },
   data() {
     return {
-      touchStatus: false
+      touchStatus: false,
+      startY: 0,
+      timer: null
     };
+  },
+  updated: function() {
+    //取字母A到top的距离
+    this.startY = this.$refs["A"][0].offsetTop;
   },
   computed: {
     letters: function() {
@@ -44,17 +50,20 @@ export default {
       this.touchStatus = true;
     },
     handleTouchMove: function(e) {
-      //console.log(this.$refs);
       if (this.touchStatus) {
-        //取字母A到top的距离
-        const startY = this.$refs["A"][0].offsetTop;
-        //取手指当前位置到顶的的距离减去header区域和搜索区域距离
-        const touchY = e.touches[0].clientY - 79;
-        //获取当前手指距离到字母A的距离除以每个字母的大小取整，获得当前字母下标
-        const index = Math.floor((touchY - startY) / 20);
-        if (index >= 0 && index < this.letters.length) {
-          this.$emit("change", this.letters[index]);
+        //限制touch操作太频繁，限流
+        if (this.timer) {
+          clearTimeout(this.timer);
         }
+        this.timer = setTimeout(() => {
+          //取手指当前位置到顶的的距离减去header区域和搜索区域距离
+          const touchY = e.touches[0].clientY - 79;
+          //获取当前手指距离到字母A的距离除以每个字母的大小取整，获得当前字母下标
+          const index = Math.floor((touchY - this.startY) / 20);
+          if (index >= 0 && index < this.letters.length) {
+            this.$emit("change", this.letters[index]);
+          }
+        }, 16);
       }
     },
     handleTouchEnd: function() {
