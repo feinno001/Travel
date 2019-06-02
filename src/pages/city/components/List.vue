@@ -6,14 +6,19 @@
         <div class="title border-topbottom">您的位置</div>
         <div class="button-list">
           <div class="button-wrapper">
-            <div class="button">北京</div>
+            <div class="button">{{this.$store.state.city}}</div>
           </div>
         </div>
       </div>
       <div class="area">
         <div class="title border-topbottom">热门城市</div>
         <div class="button-list">
-          <div class="button-wrapper" v-for="item of hotCities" :key="item.id">
+          <div
+            class="button-wrapper"
+            v-for="item of hotCities"
+            :key="item.id"
+            @click="handleCityClick(item.name)"
+          >
             <div class="button">{{item.name}}</div>
           </div>
         </div>
@@ -25,6 +30,7 @@
             class="item border-bottom"
             v-for="innerItem in item"
             :key="innerItem.id"
+            @click="handleCityClick(innerItem.name)"
           >{{innerItem.name}}</div>
         </div>
       </div>
@@ -44,14 +50,19 @@ export default {
   data() {
     return {};
   },
+  methods: {
+    handleCityClick: function(city) {
+      this.$store.commit("changeCity", city);
+    }
+  },
   mounted() {
     this.scroll = new BScroll(this.$refs.wrapper);
   },
   //监听数据变化
   watch: {
     letter: function() {
-      if(this.letter){
-        const element=this.$refs[this.letter][0];
+      if (this.letter) {
+        const element = this.$refs[this.letter][0];
         this.scroll.scrollToElement(element);
       }
     }

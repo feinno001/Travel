@@ -3,6 +3,7 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import store from './store/index'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 // 初始化页面样式
 import './assets/styles/reset.css'
@@ -21,6 +22,7 @@ fastClick.attach(document.body);
 new Vue({
   el: '#app',
   router,
+  store,
   components: {
     App
   },
