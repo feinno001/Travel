@@ -63,7 +63,7 @@ export default {
   mounted() {
     this.scroll = new BScroll(this.$refs.wrapper);
   },
-  //监听数据变化
+  //监听数据变化,侧边栏点击或者触摸拖动字母
   watch: {
     letter: function() {
       if (this.letter) {
