@@ -2,9 +2,9 @@
 <template>
   <div>
     <city-header></city-header>
-    <city-search :cities='cities'></city-search>
-    <city-list :cities='cities' :hotCities='hotCities' :letter='letter'></city-list>
-    <city-alphabet :cities='cities' @change="handelLeterChange"></city-alphabet>
+    <city-search :cities="cities"></city-search>
+    <city-list :cities="cities" :hotCities="hotCities" :letter="letter"></city-list>
+    <city-alphabet :cities="cities" @change="handelLeterChange"></city-alphabet>
   </div>
 </template>
 
@@ -18,9 +18,9 @@ export default {
   name: "City",
   data() {
     return {
-      cities:{},
-      hotCities:[],
-      letter:''
+      cities: {},
+      hotCities: [],
+      letter: ""
     };
   },
   components: {
@@ -34,15 +34,15 @@ export default {
       axios.get("/api/city.json").then(this.handleGetCityInfoSuccess);
     },
     handleGetCityInfoSuccess: function(res) {
-      res=res.data;
-      if(res.ret && res.data){
-        const data=res.data;
-        this.cities=data.cities;
-        this.hotCities=data.hotCities;
+      res = res.data;
+      if (res.ret && res.data) {
+        const data = res.data;
+        this.cities = data.cities;
+        this.hotCities = data.hotCities;
       }
     },
-    handelLeterChange:function(letter){
-      this.letter=letter;
+    handelLeterChange: function(letter) {
+      this.letter = letter;
     }
   },
   mounted: function() {

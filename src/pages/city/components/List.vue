@@ -6,7 +6,7 @@
         <div class="title border-topbottom">您的位置</div>
         <div class="button-list">
           <div class="button-wrapper">
-            <div class="button">{{this.$store.state.city}}</div>
+            <div class="button">{{city}}</div>
           </div>
         </div>
       </div>
@@ -40,6 +40,7 @@
 
 <script>
 import BScroll from "better-scroll";
+import { mapState } from "vuex";
 export default {
   name: "CityList",
   props: {
@@ -49,6 +50,9 @@ export default {
   },
   data() {
     return {};
+  },
+  computed: {
+    ...mapState(["city"])
   },
   methods: {
     handleCityClick: function(city) {
