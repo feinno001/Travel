@@ -68,7 +68,11 @@ export default {
     }
   },
   mounted: function() {
-    this.scroll = new Bscroll(this.$refs.search);
+    this.scroll = new Bscroll(this.$refs.search, {
+      mouseWheel: true,
+      click: true,
+      tap: true
+    });
   }
 };
 </script>

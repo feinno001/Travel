@@ -61,7 +61,11 @@ export default {
     }
   },
   mounted() {
-    this.scroll = new BScroll(this.$refs.wrapper);
+    this.scroll = new BScroll(this.$refs.wrapper, {
+      mouseWheel: true,
+      click: true,
+      tap: true
+    });
   },
   //监听数据变化,侧边栏点击或者触摸拖动字母
   watch: {
