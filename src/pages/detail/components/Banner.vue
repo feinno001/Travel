@@ -1,19 +1,16 @@
 <template>
   <div>
     <div class="banner" @click="handelBannerClick">
-      <img
-        class="banner-img"
-        src="//img1.qunarzz.com/sight/p0/1409/19/adca619faaab0898245dc4ec482b5722.jpg_600x330_f922b488.jpg"
-      />
+      <img class="banner-img" :src="bannerImg" />
       <div class="banner-info">
-        <div class="banner-tittle">故宫(AAAAA景区)</div>
+        <div class="banner-tittle">{{sightName}}</div>
         <div class="banner-number">
           <span class="iconfont banner-icon">&#xe626;</span>
-          {{imgs.length}}
+          {{gallaryImgs.length}}
         </div>
       </div>
     </div>
-    <CommonGallary :imgs="imgs" v-show="showGallary" @close="handelGallaryClose"></CommonGallary>
+    <CommonGallary :imgs="gallaryImgs" v-show="showGallary" @close="handelGallaryClose"></CommonGallary>
   </div>
 </template>
 
@@ -21,14 +18,20 @@
 import CommonGallary from "common/gallary/Gallary";
 export default {
   name: "DeailBanner",
+  props: {
+    sightName: {
+      type: String
+    },
+    bannerImg: {
+      type: String
+    },
+    gallaryImgs: {
+      type: Array
+    }
+  },
   data() {
     return {
-      showGallary: false,
-      imgs: [
-        "//imgs.qunarzz.com/p/tts6/1803/43/18bbbac998388902.jpg_r_390x260x90_248d0cfa.jpg",
-        "//imgs.qunarzz.com/p/tts4/1804/68/efa3a4393408f002.jpg_r_390x260x90_43bad027.jpg",
-        "//imgs.qunarzz.com/p/tts1/1804/fd/5fd7733c3802b602.jpg_r_390x260x90_2b630244.jpg"
-      ]
+      showGallary: false
     };
   },
   methods: {
