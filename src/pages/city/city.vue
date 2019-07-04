@@ -31,7 +31,8 @@ export default {
   },
   methods: {
     getCityInfo: function() {
-      axios.get("/api/city.json").then(this.handleGetCityInfoSuccess);
+      // axios.get("/api/city.json").then(this.handleGetCityInfoSuccess);
+      axios.get("/api/city").then(this.handleGetCityInfoSuccess);
     },
     handleGetCityInfoSuccess: function(res) {
       res = res.data;

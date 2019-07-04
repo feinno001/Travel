@@ -12,10 +12,12 @@ module.exports = {
     assetsPublicPath: '/',
     proxyTable: {
       '/api': {
-        target: 'http://localhost:8080',
-        pathRewrite: {
-          '^/api': 'static/mock'
-        }
+        //target: 'http://localhost:8080',//本地mock数据，如果联调请修改
+        target: 'http://10.12.0.3:3000/mock/323'
+        //本地测试指向，联调请注释掉
+        //pathRewrite: {
+        //  '^/api': 'static/mock'
+        //}
       }
     },
     // Various Dev Server settings
