@@ -39,6 +39,9 @@ export default {
   },
   activated: function() {
     window.addEventListener("scroll", this.handleScroll);
+  },
+  deactivated: function() {
+    window.removeEventListener("scroll", this.handleScroll);
   }
 };
 </script>
