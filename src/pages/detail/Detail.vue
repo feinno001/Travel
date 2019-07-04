@@ -1,19 +1,26 @@
 <template>
   <div>
-    <DeailBanner></DeailBanner>
+    <DetailBanner></DetailBanner>
+    <DetailHeader></DetailHeader>
+    <div class="content"></div>
   </div>
 </template>
 
 <script>
-import DeailBanner from "./components/Banner";
+import DetailBanner from "./components/Banner";
+import DetailHeader from "./components/Header";
 export default {
   name: "Detail",
   data() {
     return {};
   },
   components: {
-    DeailBanner
+    DetailBanner,
+    DetailHeader
   }
 };
 </script>
-<style lang='stylus' scoped></style>
+<style lang='stylus' scoped>
+.content
+  height 50rem
+</style>
