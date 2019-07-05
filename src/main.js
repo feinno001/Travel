@@ -5,6 +5,8 @@ import App from './App'
 import router from './router'
 import store from './store/index'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
+//兼容安卓低版本浏览器
+import 'babel-polyfill'
 // 初始化页面样式
 import './assets/styles/reset.css'
 // 解决移动端1px问题
