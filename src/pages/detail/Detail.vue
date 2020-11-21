@@ -1,3 +1,11 @@
+<!--
+ * @Description: 
+ * @Version: 
+ * @Autor: guowenhuan
+ * @Date: 2020-11-17 09:53:36
+ * @LastEditors: guowenhuan
+ * @LastEditTime: 2020-11-17 10:53:20
+-->
 <template>
   <div>
     <DetailBanner :sightName="sightName" :bannerImg="bannerImg" :gallaryImgs="gallaryImgs"></DetailBanner>
@@ -31,7 +39,7 @@ export default {
   methods: {
     getDetailInfo: function() {
       axios
-        // .get("/api/detail.json", {
+         //.get("/api/detail.json", {
         .get("/api/detail", {
           params: {
             id: this.$route.params.id

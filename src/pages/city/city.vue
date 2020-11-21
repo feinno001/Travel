@@ -1,3 +1,11 @@
+<!--
+ * @Description: 
+ * @Version: 
+ * @Autor: guowenhuan
+ * @Date: 2020-11-17 09:53:36
+ * @LastEditors: guowenhuan
+ * @LastEditTime: 2020-11-17 10:53:03
+-->
 <!--  -->
 <template>
   <div>
@@ -31,8 +39,8 @@ export default {
   },
   methods: {
     getCityInfo: function() {
-      // axios.get("/api/city.json").then(this.handleGetCityInfoSuccess);
-      axios.get("/api/city").then(this.handleGetCityInfoSuccess);
+       axios.get("/api/city.json").then(this.handleGetCityInfoSuccess);
+      //axios.get("/api/city").then(this.handleGetCityInfoSuccess);
     },
     handleGetCityInfoSuccess: function(res) {
       res = res.data;

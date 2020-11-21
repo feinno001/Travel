@@ -1,3 +1,11 @@
+<!--
+ * @Description: 
+ * @Version: 
+ * @Autor: guowenhuan
+ * @Date: 2020-11-17 09:53:36
+ * @LastEditors: guowenhuan
+ * @LastEditTime: 2020-11-20 20:29:15
+-->
 <template>
   <div>
     <home-header></home-header>
@@ -48,7 +56,7 @@ export default {
   },
   methods: {
     getHomeInfo: function() {
-      //Axios.get("/api/index.json?city=" + this.city).then(
+      //Axios.get("/api/index.json?city=" + this.city).then(this.getHomeInfoSuccess);
       Axios.get("/api/index?city=" + this.city).then(this.getHomeInfoSuccess);
     },
     getHomeInfoSuccess(res) {
